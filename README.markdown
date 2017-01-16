@@ -11,15 +11,18 @@ In particular, Prostor-Stream-Grouping defines:
 
 1-  LocalGrouping, which allows the instance of the source component to communicate with the LOCAL instances of the target component ( i.e., target instances deployed on the same host as the source ones).
 
-2-  LocationAwareGrouping, which allows the instances of the source component to communicate with those instances of the target component SPECIFIED BY THE DEVELOPER of Storm topologies.
+2-  LocationAwareGrouping, which allows a location-aware communication between the instances of the source component, with those instances of the target component SPECIFIED BY THE DEVELOPER of Storm topologies. 
 
+
+## Using LocationAwareGrouping 
+
+### Configuring the address of Prostor-Scheduler (the location-aware scheduler)
 LocationAwareGrouping needs to know the identifiers of component instances (that are generated at run-time when deploying the topology), in order to stream data to the appropriate target.
-To get such identifiers, it communicates with the module [Prostor-Scheduler](https://github.com/nebil-ben-mabrouk/Prostor-Scheduler). Specifically, it communicates with a REST server embedded in this module.
-The address of the scheduling REST server is specified in the file '/src/main/resources/Grouping.properties'. To change it, developers should change the property "schedule.resource.uri".
+To get such identifiers, it communicates with the module [Prostor-Scheduler](https://github.com/nebil-ben-mabrouk/Prostor-Scheduler) (which is a location-aware scheduler for Apache Storm). Specifically, it communicates with a REST server embedded in this module. The address of the scheduling REST server is specified in the file '/src/main/resources/Grouping.properties'. To change it, developers should edit the property "schedule.resource.uri".
 
 The Prostor-Stream-Groupings module is to be integrated within Storm topologies.
 
-## Using LocationAwareGrouping 
+### Specifying location-aware data streams
 In Storm topologies' configurations, developers have to add the streaming information for the components concerned with LocationAwareGrouping. 
 
 The streaming information are defined as an array of streams, which is passed as a constructor argument of the LocationAwareGrouping class. 
@@ -29,7 +32,7 @@ A stream is specified in the form of "sourceHostname->targetHostname", where:
  - targetHostname means the hostname on which the target component instance will be deployed.
 
 
-Below, is an example of a yaml configuration file for a Storm Flux topology with LocationAwareGrouping specification:
+Below, is an example of a yaml configuration file of a Storm Flux topology with LocationAwareGrouping specification:
 
 ```
   name: "myTopology"
