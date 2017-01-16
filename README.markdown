@@ -3,7 +3,7 @@
 ## Overview
 Prostor-Stream-Grouping is a software module that defines custom [stream groupings](http://storm.apache.org/releases/current/Concepts.html) for Apache Storm. 
 
-Before using Prostor-Scheduler, it is recommended to be familiar with the concepts of [Apache Storm](http://storm.apache.org/).
+Before using Prostor-Stream-Grouping, it is recommended to be familiar with the concepts of [Apache Storm](http://storm.apache.org/).
 
 A stream grouping allows data to be transmitted from the instances of a source component to the instances of a target component (a component can be a spout or a bolt).
 
