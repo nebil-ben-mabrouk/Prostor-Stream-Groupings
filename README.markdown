@@ -1,4 +1,6 @@
-# Prostor-Stream-Groupings
+# Prostor Stream Groupings
+
+Contact: Nebil BEN MABROUK (nebil.benmabrouk@gmail.com)
 
 ## Overview
 Prostor-Stream-Grouping is a software module that defines custom [stream groupings](http://storm.apache.org/releases/current/Concepts.html) for Apache Storm. 
