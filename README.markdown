@@ -7,13 +7,13 @@ Prostor-Stream-Grouping is a software module that defines custom [stream groupin
 
 Before using Prostor-Stream-Grouping, it is recommended to be familiar with the concepts of [Apache Storm](http://storm.apache.org/).
 
-A stream grouping allows data to be transmitted from the instances of a source component to the instances of a target component (a component can be a spout or a bolt).
+A stream grouping allows data to be streamed from the instances of a source component to the instances of a target component (a component can be a spout or a bolt).
 
 In particular, Prostor-Stream-Grouping defines:
 
-1-  LocalGrouping, which allows the instance of the source component to communicate with the LOCAL instances of the target component ( i.e., target instances deployed on the same host as the source ones).
+1-  LocalGrouping, which enables the instances of a source component to communicate with the LOCAL instances of the target component ( i.e., target instances deployed on the same host as the source ones).
 
-2-  LocationAwareGrouping, which allows a location-aware communication between the instances of the source component, with those instances of the target component SPECIFIED BY THE DEVELOPER of Storm topologies. 
+2-  LocationAwareGrouping, which allows a location-aware communication between the instances of a source component, with those instances of the target component SPECIFIED BY THE DEVELOPER (of Storm topologies). 
 
 
 ## Using LocationAwareGrouping 
